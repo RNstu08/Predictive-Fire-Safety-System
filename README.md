@@ -1,4 +1,3 @@
-```markdown
 # HVS Predictive Fire Safety System Project
 Version: 1.0 (Conceptual Implementation)
 
@@ -12,7 +11,7 @@ This project aims to develop an end-to-end machine learning system for the early
 
 ## 2. Project Structure
 The project follows a standard structure for scalable ML projects:
-```
+```text
 hvs_fire_prediction/
 ├── .git/                 # Git repository data
 ├── .github/              # GitHub specific files (e.g., Actions workflows)
