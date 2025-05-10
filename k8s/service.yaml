@@ -1,0 +1,29 @@
+# k8s/service.yaml
+# Defines the Kubernetes Service to expose the HVS Prediction API Deployment
+
+apiVersion: v1 # Specifies the API version for Service objects
+kind: Service # Specifies the type of Kubernetes resource
+metadata:
+  name: hvs-api-service # Name of the Service object
+spec:
+  selector:
+    app: hvs-api # This Service routes traffic to Pods with the label 'app: hvs-api' (matches Deployment's Pods)
+  ports:
+    - protocol: TCP
+      port: 80 # Port the Service will be available on *within* the cluster
+      targetPort: 5001 # Port on the Pods/Containers the traffic should be forwarded to (must match containerPort in Deployment)
+  # --- Type of Service ---
+  # Choose ONE of the following types depending on how you want to expose it:
+  # Option 1: ClusterIP (Default) - Exposes the service on an internal IP within the cluster. Only reachable from within the cluster.
+  # type: ClusterIP
+
+  # Option 2: NodePort - Exposes the service on each Node's IP at a static port (the NodePort).
+  # Good for local development/testing (Minikube/k3s). Access via <NodeIP>:<NodePort>.
+  type: NodePort
+  # nodePort: 30001 # Optional: Specify a static NodePort (within 30000-32767 range). If omitted, K8s assigns one.
+
+  # Option 3: LoadBalancer - Exposes the service externally using a cloud provider's load balancer.
+  # Typically used in cloud environments (GKE, EKS, AKS). May require specific setup.
+  # Minikube can simulate this with `minikube tunnel`.
+  # type: LoadBalancer
+

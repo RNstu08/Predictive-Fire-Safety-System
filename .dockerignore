@@ -1,0 +1,66 @@
+# .dockerignore
+
+# Git files
+.git/
+.gitignore
+
+# Docker files
+Dockerfile
+.dockerignore
+
+# Python virtual environment
+venv/
+.venv/
+env/
+ENV/
+
+# Python cache and compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE / Editor specific files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Test files and reports
+tests/
+htmlcov/
+.coverage
+pytest_cache/
+nosetests.xml
+coverage.xml
+
+# Notebooks (not needed for running the API)
+notebooks/
+
+# Data files (should not be part of the image)
+data/
+
+# MLflow tracking data (generated locally)
+mlruns/
+
+# Model files (if saved locally outside mlruns - model should be loaded via MLflow)
+models/
+
+# Documentation
+docs/
+
+# Configuration files not needed in container (adjust if needed)
+# config.yaml # Uncomment if config.yaml is NOT needed by the running app
+
+# Other build artifacts or local files
+build/
+dist/
+*.egg-info/
+*.log
+*.bak
+*.swp
+

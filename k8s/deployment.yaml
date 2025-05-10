@@ -1,0 +1,49 @@
+    # k8s/deployment.yaml
+    # Defines the Kubernetes Deployment for the HVS Prediction API
+
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: hvs-api-deployment
+      labels:
+        app: hvs-api
+    spec:
+      replicas: 3
+      selector:
+        matchLabels:
+          app: hvs-api
+      template:
+        metadata:
+          labels:
+            app: hvs-api
+        spec:
+          containers:
+          - name: hvs-api-container
+            image: hvs-prediction-api:latest # Ensure this image is accessible to K8s
+            imagePullPolicy: IfNotPresent   # Good for local images
+            ports:
+            - containerPort: 5001
+            env:
+            - name: BEST_MLFLOW_RUN_ID
+              value: "db41593df050433ab1d871bf63584505" # Replace with your actual Run ID
+            # --- ADD VOLUME MOUNT ---
+            volumeMounts:
+            - name: mlflow-data-volume # Name of the volume mount, must match a volume defined below
+              mountPath: /app/mlruns    # Path inside the container where the volume should be mounted
+            # --- END VOLUME MOUNT ---
+          # --- ADD VOLUME DEFINITION ---
+          volumes:
+          - name: mlflow-data-volume # Name of the volume
+            hostPath:
+              # Path on the host machine (your Windows machine where Docker Desktop is running)
+              # IMPORTANT: Ensure this path is correct and shared in Docker Desktop settings.
+              # Replace with the ABSOLUTE path to your project's mlruns directory.
+              path: /run/desktop/mnt/host/d/Machine_learning/Projects/hvs_fire_prediction/mlruns # Common for Docker Desktop on Windows for D: drive
+              # If your project is on C: drive, it might be:
+              # path: /c/Users/YourUser/Path/To/hvs_fire_prediction/mlruns
+              # OR for newer Docker Desktop versions, direct paths might work if file sharing is enabled:
+              # path: D:\Machine_learning\Projects\hvs_fire_prediction\mlruns 
+              # (Kubernetes YAML might need /d/ instead of D:\, test what works for your Docker Desktop version)
+              type: DirectoryOrCreate # Ensures the path exists or creates it (as a directory)
+          # --- END VOLUME DEFINITION ---
+    

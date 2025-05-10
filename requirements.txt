@@ -1,0 +1,38 @@
+# Core Data Handling & ML
+pandas>=1.5,<3.0
+numpy>=1.21,<2.0
+scikit-learn>=1.1,<1.5
+xgboost>=1.5,<2.1
+scipy>=1.8,<2.0 # For tuning distributions
+
+# Imbalance Handling (if using SMOTE script)
+imbalanced-learn>=0.10,<0.13
+
+# API Framework & Validation
+Flask>=2.2,<3.1
+pydantic>=2.0,<3.0 # Assuming Pydantic v2+ for .model_dump()
+
+# Monitoring (API Instrumentation)
+prometheus-flask-exporter>=0.18,<0.23
+
+# MLflow (Tracking & Model Loading)
+mlflow>=2.0,<2.14
+
+# Model/Scaler Saving (if not solely relying on MLflow format)
+joblib>=1.1,<1.5
+
+# WSGI Server (Recommended for Production instead of Flask dev server)
+# gunicorn>=20.0,<22.0 # Example, use if deploying with Gunicorn
+# waitress>=2.0,<3.0 # Example, alternative WSGI server for Windows/Linux
+
+# Note: Pinning versions (like pandas==2.1.4) ensures greater reproducibility
+# than using ranges (>=, <). Ranges are used here for broader compatibility
+# during development. For production, pin exact versions tested.
+
+# WSGI Server for Production
+gunicorn>=20.0,<23.0 # Added Gunicorn
+
+# Note: Consider pinning exact versions for full reproducibility in production
+# e.g., Flask==2.2.0, gunicorn==21.2.0
+# You can generate pinned versions from your working virtual environment using:
+# pip freeze > requirements.txt

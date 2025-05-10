@@ -1,0 +1,37 @@
+{
+    "readings": [
+        {
+            "Module_ID": "HazardTest01",
+            "Module_Avg_Surface_Temp_C": 75.5,
+            "Module_Max_Surface_Temp_C": 80.2,
+            "Module_Voltage_V": 38.5,
+            "Module_Current_A": -5.5,
+            "Module_SoC_percent": 30.2,
+            "Sim_OffGas_CO_ppm_proxy": 350.0,
+            "Sim_OffGas_H2_ppm_proxy": 420.0,
+            "Sim_OffGas_VOC_ppm_proxy": 510.0,
+            "Ambient_Temp_Rack_C": 23.5,
+            "Delta_1_Module_Avg_Surface_Temp_C": 3.5,
+            "Delta_1_Module_Voltage_V": -0.8,
+            "Delta_1_Module_SoC_percent": -1.5,
+            "Rolling_mean_6_Module_Avg_Surface_Temp_C": 65.0,
+            "Rolling_std_6_Module_Avg_Surface_Temp_C": 5.0,
+            "Rolling_mean_30_Module_Avg_Surface_Temp_C": 55.0,
+            "Rolling_std_30_Module_Avg_Surface_Temp_C": 8.0,
+            "Rolling_mean_60_Module_Avg_Surface_Temp_C": 48.0,
+            "Rolling_std_60_Module_Avg_Surface_Temp_C": 10.0,
+            "Rolling_mean_6_Module_Voltage_V": 40.0,
+            "Rolling_std_6_Module_Voltage_V": 1.0,
+            "Rolling_mean_30_Module_Voltage_V": 42.5,
+            "Rolling_std_30_Module_Voltage_V": 1.5,
+            "Rolling_mean_60_Module_Voltage_V": 45.0,
+            "Rolling_std_60_Module_Voltage_V": 2.0,
+            "Rolling_mean_6_Module_Current_A": -5.3,
+            "Rolling_std_6_Module_Current_A": 0.3,
+            "Rolling_mean_30_Module_Current_A": -5.4,
+            "Rolling_std_30_Module_Current_A": 0.4,
+            "Rolling_mean_60_Module_Current_A": -5.2,
+            "Rolling_std_60_Module_Current_A": 0.5
+        }
+    ]
+}
