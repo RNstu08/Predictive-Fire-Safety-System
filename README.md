@@ -68,9 +68,11 @@ hvs_fire_prediction/
 ├── Dockerfile            # Instructions to build the Docker container image
 ├── .dockerignore         # Files/directories ignored by Docker build
 └── config.yaml           # (Optional) Project-wide configurations
+```
 
 **simple**
 
+```
 hvs_fire_prediction/
 ├── .git/
 ├── .github/
@@ -309,36 +311,36 @@ This project follows an iterative MLOps workflow:
 
 ## 5. Requirements (`requirements.txt`)
 ```
-# Core Data Handling & ML
+**Core Data Handling & ML**
 pandas>=1.5,<3.0
 numpy>=1.21,<2.0
 scikit-learn>=1.1,<1.5
 xgboost>=1.5,<2.1
 scipy>=1.8,<2.0 # For tuning distributions
 
-# Imbalance Handling (if using SMOTE script)
+**Imbalance Handling (if using SMOTE script)**
 imbalanced-learn>=0.10,<0.13
 
-# API Framework & Validation
+**API Framework & Validation**
 Flask>=2.2,<3.1
 pydantic>=2.0,<3.0 # Assuming Pydantic v2+ for .model_dump()
 
-# Monitoring (API Instrumentation)
+**Monitoring (API Instrumentation)**
 prometheus-flask-exporter>=0.18,<0.23
 
-# MLflow (Tracking & Model Loading)
+**MLflow (Tracking & Model Loading)**
 mlflow>=2.0,<2.14
 
-# Model/Scaler Saving (if not solely relying on MLflow format)
+**Model/Scaler Saving (if not solely relying on MLflow format)**
 joblib>=1.1,<1.5
 
-# WSGI Server (Recommended for Production instead of Flask dev server)
-# gunicorn>=20.0,<22.0 # Example, use if deploying with Gunicorn
-# waitress>=2.0,<3.0 # Example, alternative WSGI server for Windows/Linux
+WSGI Server (Recommended for Production instead of Flask dev server)
+gunicorn>=20.0,<22.0 # Example, use if deploying with Gunicorn
+waitress>=2.0,<3.0 # Example, alternative WSGI server for Windows/Linux
 
-# Note: Pinning versions (like pandas==2.1.4) ensures greater reproducibility
-# than using ranges (>=, <). Ranges are used here for broader compatibility
-# during development. For production, pin exact versions tested.
+**Note: Pinning versions (like pandas==2.1.4) ensures greater reproducibility**
+than using ranges (>=, <). Ranges are used here for broader compatibility
+during development. For production, pin exact versions tested.
 ```
 
 ## 6. Future Work / Improvements
