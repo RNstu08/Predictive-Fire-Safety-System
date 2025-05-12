@@ -17,7 +17,7 @@ A well-defined start is paramount for any engineering project, especially comple
 * **Clarity & Focus:** Without a clear scope (e.g., what exactly constitutes an "early warning"? What sensors are available?), the project can meander. We needed to define what "imminent thermal runaway" meant in terms of a prediction window (e.g., 5-20 minutes prior to a critical event).
 * **Informed Decisions:** Understanding the physics of battery failure (e.g., off-gassing as an early sign, the progression of temperature increase) directly informs how we might simulate data, what features to engineer, and how to interpret model results.
 * **Reproducibility & Collaboration:** A standardized development environment (Python version, virtual environments) and version control (Git) are essential for any engineer to ensure work is reproducible and to facilitate teamwork (even if it's just your future self trying to understand past work).
-* **Roadmap & Manageability:** Breaking the project into phases (like the 12 phases we've discussed) makes a large undertaking manageable, allows for iterative progress, and helps in tracking.
+* **Roadmap & Manageability:** Breaking the project into phases, makes a large undertaking manageable, allows for iterative progress, and helps in tracking.
 
 ### 3. Approach & Key Activities:
 * **Scope Definition:**
