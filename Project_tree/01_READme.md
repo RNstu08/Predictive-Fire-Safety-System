@@ -1,7 +1,3 @@
-## HVS Predictive Fire Safety System: A Detailed Project Walkthrough
-
-**Project Goal:** To architect and implement an end-to-end machine learning system capable of providing early warnings for potential fire hazards (specifically thermal runaway precursors) in High-Voltage Battery Storage (HVS) systems. The project emphasizes MLOps best practices, from data generation to conceptual deployment and monitoring.
-
 ---
 
 ### Phase 1: Data Generation (Simulated & Dummy)
