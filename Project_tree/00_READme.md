@@ -45,7 +45,6 @@ A well-defined start is paramount for any engineering project, especially comple
         ```
 
 ### 4. Technical Insights & Decisions:
-* The initial decision to aim for a physics-based simulation for data generation was ambitious but recognized as ideal if achievable.
 * The directory structure was designed with MLOps principles in mind, anticipating future needs like automated testing and API deployment. Separating services from controllers in the API structure was planned from this stage to address feedback on code organization.
 
 ### 5. Outcome of Phase 0:
