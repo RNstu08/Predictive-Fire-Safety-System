@@ -66,7 +66,7 @@ The logic for this phase was initially developed as a Python script (conceptuall
     * As identified in EDA, our dataset is highly imbalanced. For this baseline phase, **class weighting** was the chosen strategy.
     * **Logistic Regression & Random Forest:** The `class_weight='balanced'` parameter was used. This mode automatically adjusts the weights assigned to each class in the model's loss function, making them inversely proportional to class frequencies. This means the model gets penalized more for misclassifying the rare hazardous class.
     * **XGBoost:** The `scale_pos_weight` parameter was used. This is calculated as `count(negative_class_samples_in_train) / count(positive_class_samples_in_train)`. For our data, this value would be very high (e.g., ~700 if 0.145% are positive), telling XGBoost to give much more importance to correctly classifying the positive (hazardous) samples.
-    * **Rationale:** Applying class weighting at the algorithm level is a relatively straightforward way to mitigate the impact of class imbalance without altering the dataset itself through resampling (like SMOTE, which would be explored later if needed).
+    * **Rationale:** Applying class weighting at the algorithm level is a relatively straightforward way to mitigate the impact of class imbalance without altering the dataset itself through resampling (like SMOTE, which would be explored later).
 
 * **Model Training:**
     * Three common and effective classification models were instantiated and trained:
