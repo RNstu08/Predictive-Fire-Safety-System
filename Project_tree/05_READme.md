@@ -34,7 +34,7 @@ This phase involved evolving our training scripts to incorporate MLflow and then
     * **Outcome:** All baseline model runs were logged to the "HVS\_Fire\_Prediction\_Baseline" experiment in MLflow, providing a clear, versioned record.
 
 * **B. Hyperparameter Tuning (e.g., for XGBoost) with MLflow (`src/training/tune_model.py` - ID: `tuning_script_v1`):**
-    * **Objective:** To find an optimal set of hyperparameters for the XGBoost model (assuming it was a promising candidate from baseline) to improve its performance on the hazardous class.
+    * **Objective:** To find an optimal set of hyperparameters for the XGBoost model (it was a promising candidate from baseline) to improve its performance on the hazardous class.
     * **Key Activities:**
         1.  **Select Model:** Chose XGBoost for tuning.
         2.  **Define Parameter Search Space (`PARAM_DISTRIBUTIONS`):** Specified a dictionary of XGBoost hyperparameters (`n_estimators`, `learning_rate`, `max_depth`, `subsample`, `colsample_bytree`, `gamma`, `reg_alpha`, `reg_lambda`) and the distributions/ranges to sample from (e.g., `scipy.stats.randint`, `scipy.stats.uniform`).
